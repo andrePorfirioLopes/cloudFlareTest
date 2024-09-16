@@ -46,6 +46,7 @@
     font-size: 0.95em;
     font-family: 'Courier New', Courier, monospace;
     color: #2c3e50;
+    white-space: preserve-breaks;
   }
   
   /* Unordered List */
