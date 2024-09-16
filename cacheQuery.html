@@ -6,8 +6,32 @@
 </head>
 <body>
     <article>
-        <h1><b>Ticket 001:</b> Site down, your name servers are down</h1>
-        <p>I am having trouble reaching my website http://example.com/ from different networks. Are your nameservers working properly?</p>
+        <h1><b>Ticket 005:</b> Content not Being Cached</h1>
+        <pre>After activating Cloudflare on my site, I am seeing that resources on my pages are not being cached:
+            curl -svo /dev/null roskolniv.us
+            * Rebuilt URL to: roskolniv.us/
+            * Trying 104.16.27.128...
+            * Connected to roskolniv.us (127.0.0.1) port 80 (#0)
+            > GET / HTTP/1.1
+            > User-Agent: curl/7.40.0
+            > Host: roskolniv.us
+            > Accept: */*
+            >
+            < HTTP/1.1 200 OK
+            < Date: Mon, 22 Jun 2015 03:03:59 GMT
+            < Content-Type: text/html; charset=utf-8
+            < Transfer-Encoding: chunked
+            < Connection: keep-alive
+            < Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0
+            < Strict-Transport-Security: max-age=10
+            
+            < X-Powered-By: Express
+            < Server: cloudflare-nginx
+            < CF-RAY: 1fa4b922fef517a4-SIN
+            <
+            { [3507 bytes data]
+            * Connection #0 to host roskolniv.us left intact
+            Why is Cloudflare’s caching not working on my site?</pre>
     </article>
     <article>
         <h2><b>Public Respose:</b></h2>
