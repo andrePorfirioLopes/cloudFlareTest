@@ -6,33 +6,26 @@
 </head>
 <body>
     <article>
-        <h1><b>Ticket 001:</b> Site down, your name servers are down</h1>
-        <p>I am having trouble reaching my website http://example.com/ from different networks. Are your nameservers working properly?</p>
+        <h1><b>Ticket 001:</b> Why is my site coming from California?!</h1>
+        <p>I'm in London, but looking at your IPs it shows that you are serving my website from California. Can that be right? Why is
+            that? I thought you were supposed to serve my website from some places close to me?</p>
     </article>
     <article>
         <h1><b>Public Respose:</b></h1>
         <pre>
             Hello Customer,
-            We are currently not observing any ongoing issues with our Nameservers, per https://www.cloudflarestatus.com/
-            Verifying http://example.com/ on https://dnschecker.org/ NS lookup currently does not show Cloudflare as the authoritive nameserver, indicating something may have been missed during setup
-            Can you confirm if the steps outlined in our Developer article for adding a website were followed and, if so, if you encountered any issues or specificities to your website that may require more custom setup?
-            Article: https://developers.cloudflare.com/fundamentals/setup/manage-domains/add-site/
+            Please note that if your website is proxied through Cloudflare, then a lookup of your domain may return one of our IP addresses instead of your original address as this allows Cloudflare to optimize, cache, and protect all requests for your website.
 
-            Additionally, http://example.com/ is an HTTP website which should, by default, be redirected to HTTPS, is it possible your host is attempting to redirect HTTPS back to HTTP resulting in a redirect loop?
+            Cloudflare utilizes an Anycast Network so traffic will prioritize the nearest and best responding server, as detailed here: https://www.cloudflare.com/en-gb/learning/cdn/glossary/anycast-network/
+            You can also validate which Cloudflare Data Center your requests are routing through by addding /cdn-cgi/trace to the domain name, per example: example.com/cdn-cgi/trace , where the value in front of "colo=" should match the nearest international airport to your data center.
             
             Please let us know if you have any additional questions or issues.
             Best regards,
         </pre>
         <h1><b>Private Comments:</b></h1>
         <pre>
-            Noting that the website is http rather than https, however, if correctly setup via Cloudflare, it should redirect without issues - unless the original host is preventing it via a feedback loop
-
-            Presuming no ongoing issues with Cloudflare Nameservers, validated via: https://www.cloudflarestatus.com/
-            Validate via https://dnschecker.org/ NS search for the customer's website if servers are showing Cloudflare as the authoritive nameserver
-            If yes, try to access the website directly and check if the issue persists - as it could simply have taken a bit to propagate
-            If the website is unreachable or does not show up on DNSchecker, it's likely the customer performed the setup incorrectly
-
-            If possible: Validate via backend tool or impersonation if customer website was correctly connected to Cloudflare as per: https://developers.cloudflare.com/fundamentals/setup/manage-domains/add-site/
+            Information available in https://developers.cloudflare.com/dns/troubleshooting/faq/#why-are-cloudflares-a-or-aaaa-records--ip-addresses-for-my-domains-dns-responses-appearing
+            Question had already been answered in archived tutorial: https://community.cloudflare.com/t/deprecated-why-does-my-site-return-a-us-ip-address/97947
     </article>
 </body>
 </html>
