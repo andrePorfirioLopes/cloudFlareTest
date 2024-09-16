@@ -14,11 +14,11 @@
         <h2><b>Public Respose:</b></h2>
         <pre>
             Hello Customer,
-            We are currently not observing any ongoing issues with our Nameservers, per https://www.cloudflarestatus.com/
-            
-            Verifying http://example.com/ on https://dnschecker.org/ NS lookup currently does not show Cloudflare as the authoritive nameserver, indicating something may have been missed during setup
+            We are currently not observing any ongoing issues with our Nameservers, per <a href="https://www.cloudflarestatus.com/">Cloudflare Status Page</a>
+
+            Verifying http://example.com/ on <a href="https://dnschecker.org/">DNS Checker</a> NS lookup currently does not show Cloudflare as the authoritive nameserver, indicating something may have been missed during setup
             Can you confirm if the steps outlined in our Developer article for adding a website were followed and, if so, if you encountered any issues or specificities to your website that may require more custom setup?
-            Article: https://developers.cloudflare.com/fundamentals/setup/manage-domains/add-site/
+            Article: <a href="https://developers.cloudflare.com/fundamentals/setup/manage-domains/add-site/">Add Site</a>
 
             Additionally, http://example.com/ is an HTTP website which should, by default, be redirected to HTTPS, is it possible your host is attempting to redirect HTTPS back to HTTP resulting in a redirect loop?
             
@@ -29,12 +29,12 @@
         <pre>
             Noting that the website is http rather than https, however, if correctly setup via Cloudflare, it should redirect without issues - unless the original host is preventing it via a feedback loop
 
-            Presuming no ongoing issues with Cloudflare Nameservers, validated via: https://www.cloudflarestatus.com/
-            Validate via https://dnschecker.org/ NS search for the customer's website if servers are showing Cloudflare as the authoritive nameserver
+            Presuming no ongoing issues with Cloudflare Nameservers, validated via: <a href="https://www.cloudflarestatus.com/">Cloudflare Status Page</a>
+            Validate via <a href="https://dnschecker.org/">DNS Checker</a> NS search for the customer's website if servers are showing Cloudflare as the authoritive nameserver
             If yes, try to access the website directly and check if the issue persists - as it could simply have taken a bit to propagate
             If the website is unreachable or does not show up on DNSchecker, it's likely the customer performed the setup incorrectly
 
-            If possible: Validate via backend tool or impersonation if customer website was correctly connected to Cloudflare as per: https://developers.cloudflare.com/fundamentals/setup/manage-domains/add-site/
+            If possible: Validate via backend tool or impersonation if customer website was correctly connected to Cloudflare as per: <a href="https://developers.cloudflare.com/fundamentals/setup/manage-domains/add-site/">Add Site</a>
     </article>
 </body>
 </html>
