@@ -31,18 +31,26 @@
             <
             { [3507 bytes data]
             * Connection #0 to host roskolniv.us left intact
-            Why is Cloudflare’s caching not working on my site?</pre>
+            Why is Cloudflare's caching not working on my site?</pre>
     </article>
     <article>
         <h2><b>Public Respose:</b></h2>
         <pre>
             Hello Customer,
             
+            As per your message, it seems like your origin server is telling Cloudflare not to cache:
+                Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0
+
+            Note that you can customize what should and should not be cached from your website by setting cache rules as per our article: https://developers.cloudflare.com/cache/concepts/customize-cache/
+
             Please let us know if you have any additional questions or issues.
             Best regards,
         </pre>
         <h2><b>Private Comments:</b></h2>
         <pre>
+            The response itself specifically mentions no caching for cache control:
+                Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0
+            Customer either missed it or doesn't realize what it means, might need to provide further assistance with cache setup if customer has issues following article.
         </pre>
     </article>
 </body>
